@@ -13,7 +13,7 @@ function App() {
   const [authorized, setAuthorized] = useState(false);
   const [checked, setChecked] = useState(false);
   const [todos, setTodos] = useState([]);
-  const API_URL = "http://localhost:5000/api/todos";
+  const API_URL = "https://dailyes.onrender.com";
 
   // ===== PASSWORD CHECK =====
   useEffect(() => {
