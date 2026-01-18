@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+.container-1{
+    margin: auto;
+    width: 80%;
+}
+
+.del:hover{
+    background: rgb(202, 117, 117);
+}
