@@ -6,15 +6,21 @@ require("dotenv").config();
 const app = express();
 
 app.use(cors());
-app.use(express.json()); // 🔴 REQUIRED
+app.use(express.json());
+
+// Root route (health check)
+app.get("/", (req, res) => {
+  res.send("Daily-ES Backend is running 🚀");
+});
 
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.log(err));
+  .catch((err) => console.error(err));
 
 app.use("/api/todos", require("./routes/todoroute"));
 
-app.listen(5000, () => {
-  console.log("Server running on port 5000");
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
