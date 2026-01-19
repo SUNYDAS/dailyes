@@ -8,3 +8,11 @@
 .del:hover{
     background: rgb(202, 117, 117);
 }
+
+@media(min-width:768px){
+.items{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3,1fr);
+}
+}

@@ -52,7 +52,7 @@ export const Todoitem = ({ todo, onDelete, onEdit }) => {
       ) : (
         
         <div>
-          <h4 className="font-bold">{todo.title}</h4>
+          <h4 className="font-bold text-6xl">{todo.title}</h4>
 
           <p className="mb-2">{todo.desc}</p>
 
@@ -84,6 +84,7 @@ export const Todoitem = ({ todo, onDelete, onEdit }) => {
             </button>
           </div>
         </div>
+
       )}
     </div>
   );

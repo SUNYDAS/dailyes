@@ -2,9 +2,10 @@ import React, { useState } from "react";
 
 export default function Todo({ todo, onDelete, onEdit }) {
   return (
-    <div className="mt-4 w-[95%] m-auto">
+    <div className="mt-12 w-[95%] m-auto">
       {todo.length === 0 && <p className="text-center text-red-500 font-bold">No Tasks Yet</p>}
-      {todo.length > 0 && <h3 className="text-left text-red-500 font-bold">Tasks List</h3>}
+      {todo.length > 0 && <h3 className="text-center text-red-500 font-bold text-2xl">Tasks List</h3>}
+      <div className='items'>
       {todo.map((t) => (
         <TodoItem
           key={t._id}
@@ -13,6 +14,7 @@ export default function Todo({ todo, onDelete, onEdit }) {
           onEdit={onEdit}
         />
       ))}
+      </div>
     </div>
   );
 }
