@@ -15,6 +15,10 @@ mongoose
 
 app.use("/api/todos", require("./routes/todoroute"));
 
+app.get("/", (req, res) => {
+  res.send("Daily-es API is running 🚀");
+});
+
 app.listen(5000, () => {
   console.log("Server running on port 5000");
 });
