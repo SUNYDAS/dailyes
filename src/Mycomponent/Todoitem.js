@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClock } from "@fortawesome/free-solid-svg-icons";
+
 
 export const Todoitem = ({ todo, onDelete, onEdit }) => {
   const [isEdit, setIsEdit] = useState(false);
@@ -52,16 +55,23 @@ export const Todoitem = ({ todo, onDelete, onEdit }) => {
       ) : (
         
         <div>
-          <h4 className="font-bold text-6xl">{todo.title}</h4>
+          <h4 className="font-bold text-2xl">{todo.title}</h4>
 
-          <p className="mb-2">{todo.desc}</p>
+          <p className="mb-2 text-xl flex items-center gap-2 mt-4">
+            <FontAwesomeIcon icon={faClock} />
+            {todo.desc}
+          </p>
+
+          <p className="text-sm text-gray-500 mb-2">
+          Posted on: {new Date(todo.createdAt).toLocaleDateString()}
+          </p>
 
           <span
-            className={`inline-block mb-3 px-3 py-1 text-white rounded ${
+            className={`inline-block w-full mb-3 px-3 py-1 text-white rounded ${
               todo.status === "pending"
-                ? "bg-yellow-500"
+                ? "bg-red-400"
                 : todo.status === "ongoing"
-                ? "bg-blue-600"
+                ? "bg-yellow-500"
                 : "bg-green-600"
             }`}
           >
