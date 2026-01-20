@@ -20,13 +20,13 @@ export default function Header({title='Logo'}) {
       </nav>
       */}
 
-      <div className="hidden md:block">
+      <div className="block">
         <Link to="tel:9330393001" className="bg-yellow-400 text-black px-4 py-2 rounded-lg font-medium hover:bg-yellow-500">
           Call - 9330393001
         </Link>
       </div>
 
-      <button id="menuBtn" className="md:hidden text-gray-700 focus:outline-none">
+      <button id="menuBtn" className="hidden text-gray-700 focus:outline-none">
         ☰
       </button>
     </div>
