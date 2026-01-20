@@ -73,9 +73,9 @@ export const TodoItem = ({ todo, onDelete, onEdit }) => {
           <span
             className={`inline-block mb-3 px-3 py-1 text-white rounded ${
               todo.status === "pending"
-                ? "bg-yellow-500"
+                ? "bg-red-400"
                 : todo.status === "ongoing"
-                ? "bg-blue-600"
+                ? "bg-yellow-500"
                 : "bg-green-600"
             }`}
           >
