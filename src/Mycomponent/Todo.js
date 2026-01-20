@@ -6,13 +6,13 @@ export default function Todo({ todo, onDelete, onEdit }) {
       {todo.length === 0 && <p className="text-center text-red-500 font-bold">No Tasks Yet</p>}
       {todo.length > 0 && <h3 className="text-center text-red-500 font-bold text-2xl">Tasks List</h3>}
       <div className='items'>
-      {todo.map((t) => (
-        <TodoItem
-          key={t._id}
-          todo={t}
-          onDelete={onDelete}
-          onEdit={onEdit}
-        />
+      {[...todo].reverse().map((t) => (
+      <TodoItem
+      key={t._id}
+      todo={t}
+      onDelete={onDelete}
+      onEdit={onEdit}
+      />
       ))}
       </div>
     </div>
@@ -67,7 +67,7 @@ export const TodoItem = ({ todo, onDelete, onEdit }) => {
           </div>
         </div>
       ) : (
-        <div>
+        <div className="grid">
           <h4 className="font-bold text-lg">{todo.title}</h4>
           <p className="mb-2 text-gray-700">{todo.desc}</p>
           <span

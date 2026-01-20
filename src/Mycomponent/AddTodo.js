@@ -35,7 +35,7 @@ export default function AddTodo({ add_todo }) {
         </div>
 
         <div className="flex flex-col">
-          <label className="mb-1 text-sm font-medium text-gray-600"> Description* </label>
+          <label className="mb-1 text-sm font-medium text-gray-600"> Time* </label>
           <input
             type="text"
             name="todo_desc"
